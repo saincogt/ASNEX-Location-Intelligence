@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<iframe
+  width="1280"
+  height="980"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD5d3KT9e0rlBkBqjmJBQVkjyMb-dauHVY&q=darwin" allowfullscreen>
+</iframe>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html> 
+<head>
+	<link rel="stylesheet" href="main.css">
+	<style>
+	.controls {
+		background-color: #fff;
+		border-radius: 2px;
+		border: 1px solid transparent;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+		box-sizing: border-box;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 300;
+		height: 29px;
+		margin-left: 17px;
+		margin-top: 10px;
+		outline: none;
+		padding: 0 11px 0 13px;
+		text-overflow: ellipsis;
+		width: 400px;
+	}
+	</style>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5d3KT9e0rlBkBqjmJBQVkjyMb-dauHVY&libraries=places"></script>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="map.js"></script>
+</head> 
+<body>
+	<div id="map" style="width: 1600px; height: 1080px"></div> 
+	<input id="pac-input-1" class="controls" type="text" placeholder="Enter the starting point">
+	<input id="pac-input-2" class="controls" type="text" placeholder="Enter the destination">
+	<script type="text/javascript"> 
+		// var myOptions = {
+		// 	zoom: 15,
+		// 	center: new google.maps.LatLng(-12.460753, 130.842974),
+		// 	mapTypeId: google.maps.MapTypeId.ROADMAP
+		// };
+
+		// var map = new google.maps.Map(document.getElementById("map"), myOptions);
+		// var input1 = document.getElementById('pac-input-1');
+		// var input2 = document.getElementById('pac-input-2');
+		// // var autocomplete = new google.maps.places.Autocomplete(input);
+		// // autocomplete.bindTo('bounds', map);
+
+		// map.controls[google.maps.ControlPosition.TOP_LEFT].push(input1);
+		// map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
+		initialize();
+	</script> 
+</body> 
+</html>
