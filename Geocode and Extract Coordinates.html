@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Get Coordinates & Generate Geocode Link</title>
+</head>
+<body>
+	<h1>Input the location information:</h1> <br>
+	<input type="text" id="myText" value="">
+	<button onclick="getCoordinates()">Get the coordinates</button> <p></p>
+	<input type="text" id="coordinatesX" value=""> <button id="copyX" onclick="copyContent('coordinatesX', 'copyX')" >Copy X</button>
+	<p></p>
+	<input type="text" id="coordinatesY" value=""> <button id="copyY" onclick="copyContent('coordinatesY', 'copyY')" >Copy Y</button>
+	<p></p>
+	<p id="demo"></p>
+	<p>Your Last Input:</p>
+	<input type="text" id="lastInput" value=""> <button id="copyLast" onclick="copyContent('lastInput', 'copyLast')">Copy Last Input</button>
+	<br>
+	<h1>Generate the Geocode link:</h1> <br>
+	Road 1: <input type="text" id="road1" value="">
+	Road 2: <input type="text" id="road2" value="">
+	<button id="getLink" onclick="generateLink()">Get Link</button> <br>
+	<a href="" id="geocodeLink">Geocode Link</a>
+	<script>
+	function getCoordinates() {
+	    var x = document.getElementById("myText").value;
+	    // var whereCoordinates = x.indexOf('-1');
+	    // var myCoordinates = x.slice(whereCoordinates);
+	    // var coordinatesArray = myCoordinates.split(", ");
+	    var coordinatesArray = x.match(/[-+]\d+\.\d+|\d+\.\d+\b|\d+\d+\-\d(?=\w)/g).map(function (v) {return +v;});
+
+	    document.getElementById("demo").innerHTML = coordinatesArray;
+	    document.getElementById("coordinatesX").value = coordinatesArray[0];
+	    document.getElementById("coordinatesY").value = coordinatesArray[1];
+	    document.getElementById("copyX").innerHTML = "Copy X";
+	    document.getElementById("copyY").innerHTML = 'Copy Y';
+	    document.getElementById("copyLast").innerHTML = 'Copy Last Input';
+	    document.getElementById("lastInput").value = x;
+	    document.getElementById("myText").value = "";
+	};
+
+	function copyContent(textId, buttonId) {
+		document.getElementById(textId).select();
+		document.execCommand("copy");
+		document.getElementById(buttonId).innerHTML = 'Copied';	
+	};
+	function generateLink() {
+		var road1 = document.getElementById("road1").value.toLowerCase().replace(/ /g, "+");
+		var road2 = document.getElementById("road2").value.toLowerCase().replace(/ /g, "+");
+		var address = "http://maps.googleapis.com/maps/api/geocode/json?address=";
+		var regionDisplay = "&amp;region=au";
+		var regionActual = "&region=au"
+		var myString = address + road1 + "+and+" + road2;
+		console.log(myString+regionActual);
+		document.getElementById("geocodeLink").href = myString + regionActual;
+		document.getElementById("geocodeLink").innerHTML = myString + regionDisplay;
+		// document.getElementById("jsonScript").src = myString;
+	};
+	// function getJSONP(url, success) {
+
+	//     var ud = '_' + +new Date,
+	//         script = document.createElement('script'),
+	//         head = document.getElementsByTagName('head')[0] 
+	//                || document.documentElement;
+
+	//     window[ud] = function(data) {
+	//         head.removeChild(script);
+	//         success && success(data);
+	//     };
+
+	//     script.src = url.replace('callback=?', 'callback=' + ud);
+	//     head.appendChild(script);
+
+	// };
+
+	// getJSONP('http://soundcloud.com/oembed?url=http%3A//soundcloud.com/forss/flickermood&format=js&callback=?', function(data){
+ //    	console.log(data);
+	// }); 
+	</script>
+</body>
+<script src="" id="jsonScript"></script>
+</html>
