@@ -75,29 +75,26 @@ function showMarker(){
 			draggable: true
 	});
 
-	build_info_window();
+	show_infoWindow(marker);
 
 	google.maps.event.addListener(marker, 'click', function(event) {
-		build_info_window();
+		show_infoWindow(marker);
 	});
 
 	google.maps.event.addListener(marker, "dragend", function() {
-		build_info_window();
+		show_infoWindow(marker);
 	});
 }
 
-function show_infoWindow(){
+function show_infoWindow(marker){
 
 	infowindow.setContent( '<div class="googleMap_infowindow">'
-+'<span class="info_details"><strong>Drag marker to required location.</strong></span>'
-+ '<span class="info_details">Latitude:</span><span class="info_details"> <input type="text" value="'+ marker.getPosition().lat() + '"/></span>'
-+ '<span class="info_details">Longitude:</span><span class="info_details"> <input type="text" value="'+ marker.getPosition().lng() 
-// + '"/></span>' + '<span class="info_details">Sea level:</span><span class="info_details"> <input type="text" name="seaHeight" id="seaHeight" value="'+sea_level
-+'"/></span></div>'
- );
-	
+		+'<span class="info_details"><strong>Drag marker to required location.</strong></span>'
+		+ '<span class="info_details">Latitude:</span><span class="info_details"> <input type="text" size="18" value="'+ marker.getPosition().lat().toFixed(7) + '"/><button>Copy Lat</button></span>'
+		+ '<span class="info_details">Longitude:</span><span class="info_details"> <input type="text" size="18" value="'+ marker.getPosition().lng().toFixed(7) +'"/><button>Copy Lng</button></span>' 
+		+ '<span class="info_details">Coordinates:</span><span class="info_details"> <input type="text" size="18" value="' + marker.getPosition().lat().toFixed(7) + ', ' + marker.getPosition().lng().toFixed(7) + '"/><button>Copy?</button></div>'
+	);
 	infowindow.open(map,marker);
-		
 }
 
 function remove_all_markers(){
@@ -106,37 +103,38 @@ function remove_all_markers(){
 	}
 }
 
-function build_info_window() {
+// function build_info_window() {
 
-var sea_level;
+// // var sea_level;
 
-	$.ajax({
-		url: "googlemap.html",
-		type: "POST",
-		dataType: 'html',
-		data: {
-			lat: marker.getPosition().lat(),
-			lng: marker.getPosition().lng()
-		},
-		success: function(respText) {
-			if (respText == '-9999') {
-				sea_level = '';
-			} else if (respText.match('Error: the free servers are currently overloaded with requests.')) {
-				sea_level = '';
-			} else {
-				sea_level = respText + ' m';
-			}
-		},
-		complete: function() {
-			show_infoWindow(sea_level);
-		}
-	});
-}
+// // 	$.ajax({
+// // 		url: "googlemap.html",
+// // 		type: "POST",
+// // 		dataType: 'html',
+// // 		data: {
+// // 			lat: marker.getPosition().lat(),
+// // 			lng: marker.getPosition().lng()
+// // 		},
+// // 		success: function(respText) {
+// // 			if (respText == '-9999') {
+// // 				sea_level = '';
+// // 			} else if (respText.match('Error: the free servers are currently overloaded with requests.')) {
+// // 				sea_level = '';
+// // 			} else {
+// // 				sea_level = respText + ' m';
+// // 			}
+// // 		},
+// // 		complete: function() {
+// // 			show_infoWindow(sea_level);
+// // 		}
+// // 	});
+// 	show_infoWindow(marker);
+// }
 
 function showAddress(address) {
 
 	geocoder.geocode( { 'address': address}, function(results, status) {
-	   
+
 		if (status == google.maps.GeocoderStatus.OK) {
 			// remove all markers
 			remove_all_markers();
@@ -158,7 +156,15 @@ function addMarker(location, map) {
 		map: map,
 		draggable: true
 	});
+
+	show_infoWindow(AnotherMarker);
+
 	google.maps.event.addListener(AnotherMarker, 'click', function(event) {
-		build_info_window();
+		show_infoWindow(AnotherMarker);
 	});
+
+	google.maps.event.addListener(AnotherMarker, "dragend", function() {
+		show_infoWindow(AnotherMarker);
+	});
+	
 }
