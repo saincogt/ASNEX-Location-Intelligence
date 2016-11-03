@@ -1,0 +1,549 @@
+body {
+    font-family: "Open Sans";
+    color: #666666;
+    line-height: 1.6;
+}
+h1, h2, h3, h4, h5 {
+    color: #f2620b;
+}
+a, a:hover, a:focus {
+    outline: 0;
+}
+header {
+    background-color: rgba(0, 154, 73, 0.0);
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+}
+header  .container {
+    padding: 6px 0;
+}
+header nav, #main-nav .dropdown-menu {
+    background-color: rgba(0, 154, 73, 0.9);
+}
+#main-nav .dropdown-menu a:hover, #main-nav .dropdown-menu a.active {
+    text-decoration: none;
+    background-color: rgba(0, 154, 73, 1);
+    color:  #fda16a;
+}
+header nav .container {
+    padding: 0;
+}
+#main-nav.navbar {
+    margin: 0;
+    border-radius: 0;
+    border-top: none !important;
+}
+#main-nav .nav > li > a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 15px;
+    padding-left: 9px;
+    padding-right: 10px;
+    position: relative;
+}
+#main-nav .nav > li > a:hover, #main-nav .nav > li > a:focus {
+    background: none;
+}
+#main-nav .nav > li > span.line {
+    display: none;
+}
+#main-nav .nav > li:hover > span.line, #main-nav .nav > li.active > span.line {
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #FF7900;
+}
+#main-nav .nav > li.dropdown div {
+    padding: 14px 20px 13px;
+    color: #ffffff;
+    font-size: 16px;
+}
+#main-nav .dropdown-menu {
+    padding: 0;
+    min-width: 185px;
+}
+#main-nav .dropdown-menu a {
+    color: #ffffff;
+    padding: 6px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: block;
+    margin: 0;
+}
+.nav.navbar-nav {
+    position: relative;
+}
+.navbar-toggle {
+    background: url('img/menu_button.png') no-repeat;
+}
+/*.nav .dropdown-toggle .caret { display:none; }*/
+
+.content {
+    padding: 20px 0;
+    background-color: rgba(248,248,248,0.8);
+}
+.cse .gsc-control-cse, .gsc-control-cse {
+    background-color: transparent !important;
+    border: 1px solid rgba(0, 154, 73, 0.2) !important;
+}
+.gsc-input-box {
+    border: 1px solid #cccccc !important;
+}
+.gsc-input-box {
+    height: auto !important;
+}
+.gsst_a .gscb_a {
+    color: rgba(0, 154, 73, 0.9) !important;
+    cursor: pointer;
+    font-size: 30px !important;
+    line-height: 25px !important;
+}
+.gsc-search-button.gsc-search-button-v2 {
+    background-color: rgba(242, 98, 11, 0.7) !important;
+}
+.gsc-search-button.gsc-search-button-v2:hover {
+    background-color: rgba(242, 98, 11, 1) !important;
+}
+.gsc-input {
+    background: none !important;
+}
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button {
+    box-sizing: content-box;
+    line-height: normal;
+    border: none !important;
+    border-radius: 0 !important;
+}
+#public_places ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+#public_places ul li {
+    line-height: 25px;
+}
+#map_canvas_container {
+    border: 1px solid #aaaaaa;
+    padding: 15px;
+}
+.gm-style-iw td {
+    padding: 5px;
+    line-height: 1.4;
+}
+.gm-style-iw td img {
+    padding: 2px;
+}
+#search_street_container {
+    padding: 15px;
+    border: 1px solid #cccccc;
+    margin: 10px 0;
+    background: none repeat scroll 0 0 #dddddd;
+    display: table;
+}
+#street_address {
+    width: 100%;
+    line-height: 26px;
+}
+#frm_search_address #submit, #btn_show_search_result, .submitOn, #submitRoute {
+    background: none repeat scroll 0 0 rgba(0, 154, 73, 0.7);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 15px;
+}
+
+#frm_search_address #submit:hover {
+    background: none repeat scroll 0 0 rgba(0, 154, 73, 1);
+}
+#printDir {
+    background: none repeat scroll 0 0 rgba(242, 98, 11, 0.7);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 15px;
+}
+#printDir:hover {
+    background: none repeat scroll 0 0 rgba(242, 98, 11, 1);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 15px;
+}
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+footer {
+    background-color: rgba(224, 224, 224, 0.7);
+    padding: 10px 0 0 0;
+}
+footer .footer-col {
+    border-right: 1px dotted #999999;
+    height: 220px;
+    padding-left: 25px;
+    margin: 10px 0;
+}
+footer .footer-col.last {
+    border: none;
+}
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+footer ul a {
+    font-size: 13px;
+    color: #666666;
+    line-height: 20px;
+}
+#footer-bottom {
+    background: none repeat scroll 0 0 rgba(60, 60, 60, 0.6);
+    color: #ffffff;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+#footer-bottom a {
+    color: #ffffff;
+}
+#footer-bottom-menu {
+    text-align: right;
+}
+.map-point-info {
+    width: 400px;
+    height: 100%;
+}
+.map-point-info h5 {
+    display: block;
+}
+.map-point-info img {
+    float: right;
+    max-width: 100%;
+    padding: 6px 10px;
+}
+#map_container {
+    margin-bottom: 10px;
+}
+#Map {
+    display: none;
+}
+.map-info-row {
+    margin-top: 20px;
+}
+#side_bar .map-marker {
+    line-height: 30px;
+}
+#side_bar .map-marker b {
+    font-size: 22px;
+    margin-right: 10px;
+    color: rgba(242, 98, 11, 1);
+}
+.mapDirSuggestParent {
+    display: none;
+}
+.maps_divs {
+    width: 100%;
+    height: 530px;
+}
+#map_canvas{
+    height: 500px;
+    width: 100%;
+}
+.googleMap_infowindow {
+    height: 145px;
+    width: 245px;
+}
+.googleMap_infowindow .info_details {
+    clear: both;
+    float: left;
+    margin-left: 10px;
+}
+.hidden {
+    display: none;
+}
+#routeForm label {
+    width: 99% !important;
+}
+#routeForm input[type="radio"] {
+    margin-top: 10px;
+}
+#routeForm label #routeStart,
+#routeForm label #routeVia,
+#routeForm label #routeEnd {
+    width: 100%;
+}
+#submitRoute {
+    margin-top: 15px;
+}
+#directionsPanel {
+    border: 1px solid #aaaaaa;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    text-align: center;
+}
+.adp-directions {
+    margin: 0 auto;
+}
+.adp-placemark {
+    font-weight: bold !important;
+}
+.contact-info {
+    font-size: 22px;
+}
+.contact-info div {
+    margin-top: 20px;
+}
+.contact-info i {
+    font-size: 25px;
+    color: rgba(0, 154, 73, 1);
+    margin-right: 5px;
+}
+.contact-info b {
+    display: block;
+    font-size: 18px;
+    margin-top: 18px;
+}
+#sitemap-row ul {
+    list-style: none;
+    padding-left: 10px;
+}
+.sitemap-div {
+    margin-top: 20px;
+}
+#main-nav-ul {
+    overflow: visible;
+}
+#main-nav .nav > li > a{
+    padding-top: 17px !important;
+}
+/*.gm-style-iw {*/
+    /*height: 100% !important;*/
+/*}*/
+#main-nav .nav > li.dropdown div {
+    cursor: pointer;
+}
+.search-input {
+    width: 100%;
+    line-height: 26px;
+}
+.draw_btn {
+    background: #f8faf7;
+    background: -moz-linear-gradient(top,  #f8faf7 0%, #dddddd 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8faf7), color-stop(100%,#dddddd));
+    background: -webkit-linear-gradient(top,  #f8faf7 0%,#dddddd 100%);
+    background: -o-linear-gradient(top,  #f8faf7 0%,#dddddd 100%);
+    background: -ms-linear-gradient(top,  #f8faf7 0%,#dddddd 100%);
+    background: linear-gradient(to bottom,  #f8faf7 0%,#dddddd 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8faf7', endColorstr='#dddddd',GradientType=0 );
+    border: 1px solid #cec7c7;
+    border-radius: 5px;
+    padding: 5px 10px 5px 5px;
+    margin-bottom: 15px;
+    display: inline-block;
+    color: #5e5e5d;
+    cursor: pointer;
+}
+.draw_btn:hover {
+    background: #dddddd !important;
+}
+.loop-root-icon {
+    background: url('../../map-my-route/images/loop-route.png') 0 0 no-repeat;
+    width: 30px;
+    height: 26px;
+    margin-right: 15px;
+    display: inline-block;
+    float: left;
+}
+.undo-last-leg-icon {
+    background: url('../../map-my-route/images/undo-last-leg.png') 0 0 no-repeat;
+    width: 30px;
+    height: 26px;
+    margin-right: 5px;
+    display: inline-block;
+    float: left;
+}
+.out-and-back-icon {
+    background: url('../../map-my-route/images/out-and-back.png') 0 0 no-repeat;
+    width: 30px;
+    height: 26px;
+    margin-right: 5px;
+    display: inline-block;
+    float: left;
+}
+.start-over-icon {
+    background: url('../../map-my-route/images/start-over.png') 0 0 no-repeat;
+    width: 30px;
+    height: 26px;
+    margin-right:26px;
+    display: inline-block;
+    float: left;
+}
+#save-root-btn {
+    text-align: center;
+    margin-bottom: 15px;
+}
+#save-root-btn #uxLogin {
+    background: none repeat scroll 0 0 rgba(242, 98, 11, 0.7);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 40px;
+    display: inline-block;
+    cursor: pointer;
+}
+#save-root-btn #uxLogin:hover {
+    background: none repeat scroll 0 0 rgba(242, 98, 11, 1);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 40px;
+}
+#save-root-to-server {
+    background: none repeat scroll 0 0 rgba(242, 98, 11, 0.7);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+#save-root-to-server:hover {
+    background: none repeat scroll 0 0 rgba(242, 98, 11, 1);
+}
+#route_id_done a {
+    background: none repeat scroll 0 0 rgba(0, 154, 73, 0.7);
+    border: medium none;
+    color: #ffffff;
+    padding: 5px 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+#route_id_done a:hover {
+    background: none repeat scroll 0 0 rgba(0, 154, 73, 1);
+}
+#route-buttons {
+    margin-top: 15px;
+}
+/*#route-buttons .distance-row {*/
+    /*margin-bottom: 15px;*/
+/*}*/
+.distance-container {
+    background: none repeat scroll 0 0 #dddddd;
+    border: 1px solid #cccccc;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    display: block;
+    max-width: 100%;
+}
+.dist {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    height: 25px;
+    line-height: 24px;
+    padding-left: 10px;
+}
+#mapoptions {
+    margin-top: 10px;
+}
+#mapoptions span {
+    margin-right: 30px;
+    line-height: 25px;
+    color: #5e5e5d
+}
+#mapoptions-cont #travel-mode span {
+    margin-right: 10px;
+ }
+#mapoptions b {
+    margin-right: 10px;
+}
+#mapoptions input {
+    margin-right: 5px;
+}
+#save-root-to-server {
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+#route_id_done {
+    margin-top: 10px;
+}
+#route_id_done a {
+    color: #ffffff;
+}
+#route_id_done a:hover {
+    text-decoration: none;
+}
+#view-results {
+    margin-bottom: 10px;
+}
+#view-results h5 {
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 5px 7px 0;
+}
+#view-share {
+    float: left;
+}
+#view-results .addthis_sharing_toolbox {
+    margin-top: 4px;
+}
+.search_box {
+    background: url("img/search_box_icon.png") no-repeat scroll 10px 9px rgba(0, 154, 73, 1);
+    height: 24px;
+    margin: 8px 5px;
+    padding: 18px;
+    width: 18px;
+    cursor: pointer;
+}
+.search_content {
+    background-color: rgba(0, 154, 73, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    position: absolute !important;
+    right: 0;
+    top: 53px;
+    z-index: 99999;
+    width: 320px;
+}
+.nav.navbar-nav .search_content, .navbar-header .search-wrapper .search_content{
+    display: none;
+}
+.search_content .gsc-control-cse {
+    border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+    padding: 12px 37px 8px 15px;
+}
+.search_box_container {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.search_close {
+    background: url("img/search_box_close_icon.png") no-repeat scroll 9px 7px rgba(0, 154, 73, 1);
+    display: table;
+    float: right;
+    height: 16px;
+    padding: 15px 15px 13px 15px;
+    width: 13px;
+    margin-top: 1px;
+    cursor: pointer;
+}
+.search-wrapper .search_box {
+    float: right;
+    margin-bottom: 8px;
+    margin-right: 17px;
+    margin-top: 5px;
+    padding: 16px;
+    position: relative;
+    background-color: transparent;
+}
+.search-wrapper .search_content {
+    top: 51px
+}
+#top-banner {
+ text-align: right;
+}

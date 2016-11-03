@@ -61,7 +61,7 @@ function initialize() {
 		addMarker(event.latLng, map);
 	});
 
-	// showMarker();
+	showMarker();
 }
 
 function showMarker(){
