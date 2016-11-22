@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Get Distance & Coordinates Tool</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<style>
 	.controls {
 		background-color: #fff;
@@ -22,17 +23,50 @@
 		text-overflow: ellipsis;
 		width: 400px;
 	}
+
+	.pageRightSide {
+		clear: none;
+		float: right;
+		height: 200px;
+		width: 400px;
+	}
+	.pageLeftSide {
+		clear: none;
+		float: left;
+		height: 800px;
+		width: 900px;
+	}
 	</style>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5d3KT9e0rlBkBqjmJBQVkjyMb-dauHVY&libraries=places"></script>
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="src/map.js"></script>
 </head> 
 <body>
-	<div id="map" style="width: 1600px; height: 1080px"></div> 
+	<div id="map" style="width: 1400px; height: 880px" class="pageLeftSide"></div>
 	<input id="pac-input-1" class="controls" type="text" placeholder="Enter the starting point">
 	<input id="pac-input-2" class="controls" type="text" placeholder="Enter the destination">
-	<script type="text/javascript"> 
-		initialize();
-	</script> 
+	<script type="text/javascript">
+	initialize();
+	</script>
+	<div class="pageRightSide">
+		<h4>Input the location information:</h4> <br>
+		<div class="input-group">
+			<input type="text" id="myText" value="" class="form-control" style="width:180px;">
+		<button onclick="getCoordinates()" class="btn btn-primary">Get the coordinates</button> 
+		</div><br>
+		<div class="input-group"><input type="text" id="coordinatesX" value="" class="form-control" style="width:180px;"> <button id="copyX" onclick="copyContent('coordinatesX', 'copyX')" class="btn btn-primary">Copy X</button></div>
+		<br>
+		<div class="input-group"><input type="text" id="coordinatesY" value="" class="form-control" style="width:180px;"> <button id="copyY" onclick="copyContent('coordinatesY', 'copyY')" class="btn btn-primary">Copy Y</button></div>
+		<br>
+		<div class="input-group"><input type="text" id="completeCoordinates" class="form-control" style="width:180px;"> <button id="copyXY" onclick="copyContent('completeCoordinates', 'copyXY')" class="btn btn-primary">CopyXY</button></div>
+		<p>Your Last Input:</p>
+		<div class="input-group"><input type="text" id="lastInput" value="" class="form-control" style="width:180px;"> <button id="copyLast" onclick="copyContent('lastInput', 'copyLast')" class="btn btn-primary">Copy Last Input</button></div>
+		<br>
+		<h4>Generate the Geocode link:</h4> <br>
+		<input type="text" id="road1" value="" class="form-control" style="width:180px;" placeholder="Road 1"> <br>
+		<input type="text" id="road2" value="" class="form-control" style="width:180px;" placeholder="Road 2"> <br>
+		<button id="getLink" onclick="generateLink()" class="btn btn-primary">Get Link</button> <br> <br>
+		<a href="" id="geocodeLink">Geocode Link</a>
+	</div>
 </body> 
 </html>

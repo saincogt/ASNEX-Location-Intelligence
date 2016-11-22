@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NEW ASNEX Tool</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+		.controls {
+			background-color: #fff;
+			border-radius: 2px;
+			border: 1px solid transparent;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+			box-sizing: border-box;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 300;
+			height: 29px;
+			margin-left: 17px;
+			margin-top: 10px;
+			outline: none;
+			padding: 0 11px 0 13px;
+			text-overflow: ellipsis;
+			width: 400px;
+		}
+
+		.pageRightSide {
+			clear: none;
+			float: right;
+			height: 200px;
+			width: 400px;
+		}
+		.pageLeftSide {
+			clear: none;
+			float: left;
+			height: 800px;
+			width: 900px;
+		}
+	</style>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5d3KT9e0rlBkBqjmJBQVkjyMb-dauHVY&libraries=places"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="src/New map.js"></script>
+</head>
+<body>
+	<div id="map" class="pageLeftSide" style="width: 1400px; height: 880px;"></div>
+	<input type="text" class="controls" id="origin" placeholder="Enter the starting point">
+	<input type="text" class="controls" id="destination" placeholder="Enter the destination">
+	<script type="text/javascript">
+		initialize();
+	</script>
+	
+</body>
+</html>
