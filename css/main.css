@@ -1,11 +1,11 @@
 body {
     font-family: "Open Sans";
-    color: #666666;
+/*    color: #666666;*/
     line-height: 1.6;
 }
-h1, h2, h3, h4, h5 {
+/*h1, h2, h3, h4, h5 {
     color: #f2620b;
-}
+}*/
 a, a:hover, a:focus {
     outline: 0;
 }
